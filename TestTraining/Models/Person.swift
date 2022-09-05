@@ -2,12 +2,13 @@
 
 import Foundation
 
-struct Person: Identifiable, Decodable {
+struct Person: Identifiable, Hashable {
     var id: ObjectIdentifier
-
     let name: String
     let language: String?
+}
 
+extension Person: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decode(String.self, forKey: .name)

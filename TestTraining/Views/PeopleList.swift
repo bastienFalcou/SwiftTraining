@@ -7,7 +7,7 @@ struct PeopleList: View {
 
     var body: some View {
         if let people = model.people {
-            List(people) { person in
+            List(people, id: \.self) { person in
                 PersonRow(person: person)
             }
         }

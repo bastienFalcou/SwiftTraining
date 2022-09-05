@@ -6,10 +6,9 @@ struct PeopleList: View {
     @ObservedObject var model: ViewModel
 
     var body: some View {
-        if let people = model.people {
-            List(people, id: \.self) { person in
-                PersonRow(person: person)
-            }
-        }
+        let people = model.people ?? []
+        List(people, id: \.self) { person in
+            PersonRow(person: person)
+        }.errorAlert(error: $model.error)
     }
 }

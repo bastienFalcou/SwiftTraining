@@ -27,6 +27,7 @@
 		0CF0ED1C28C6683700907919 /* PeopleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF0ED1B28C6683700907919 /* PeopleRow.swift */; };
 		0CF0ED1F28C6686000907919 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF0ED1E28C6686000907919 /* UIViewController+Extensions.swift */; };
 		0CF0ED2128C6689600907919 /* UniqueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF0ED2028C6689600907919 /* UniqueIdentifier.swift */; };
+		0CF0ED2328C6AAB100907919 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF0ED2228C6AAB100907919 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		0CF0ED1B28C6683700907919 /* PeopleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleRow.swift; sourceTree = "<group>"; };
 		0CF0ED1E28C6686000907919 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		0CF0ED2028C6689600907919 /* UniqueIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueIdentifier.swift; sourceTree = "<group>"; };
+		0CF0ED2228C6AAB100907919 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				0CF0ED1E28C6686000907919 /* UIViewController+Extensions.swift */,
+				0CF0ED2228C6AAB100907919 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				0CB336F528BA9F7E00BB4383 /* ViewModel.swift in Sources */,
 				0CB336F028BA9A7200BB4383 /* APIClient.swift in Sources */,
 				0CF0ED1A28C6681B00907919 /* PeopleList.swift in Sources */,
+				0CF0ED2328C6AAB100907919 /* UIView+Extensions.swift in Sources */,
 				0CB336FE28BAA48A00BB4383 /* RequestType.swift in Sources */,
 				0CF0ED1C28C6683700907919 /* PeopleRow.swift in Sources */,
 			);

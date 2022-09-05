@@ -7,6 +7,7 @@ final class ViewModel: ObservableObject {
     private let apiClient: APIClient
 
     @Published var people: [Person]?
+    @Published var error: Error?
 
     init(apiClient: APIClient) {
         self.apiClient = apiClient
@@ -20,7 +21,7 @@ final class ViewModel: ObservableObject {
             case .success(let response):
                 self?.people = response.people
             case .failure(let error):
-                print(error)
+                self?.error = error
             }
         }
     }

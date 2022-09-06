@@ -11,7 +11,9 @@ struct PersonRow: View {
     }
 
     var body: some View {
-        Text("Name: \(person.name)")
-        Text("Favorite Language: \(person.language ?? "None")")
+        VStack(alignment: .leading, spacing: 5.0) {
+            Text("Name: ").fontWeight(.bold) + Text(person.name)
+            Text("Favorite Language: ").fontWeight(.bold) + Text(person.language ?? "None")
+        }
     }
 }

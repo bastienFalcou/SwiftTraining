@@ -15,6 +15,6 @@ final class ViewController: UIViewController {
         let controller = UIHostingController(rootView: peopleList)
         inject(controller: controller)
 
-        viewModel.makeAPICall()
+        viewModel.makeAPICallAsyncAwait()
     }
 }

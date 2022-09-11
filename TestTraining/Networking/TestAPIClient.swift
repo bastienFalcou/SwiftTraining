@@ -30,4 +30,12 @@ final class TestAPIClient: APIClient {
             )
         }.resume()
     }
+
+    func perform<T>(request: RequestType,
+                    path: String,
+                    properties: [String : Any]?) async throws -> T where T: Decodable {
+        let url = baseURL.appendingPathComponent(path)
+        let (data, _) = try await URLSession.shared.data(from: url)
+        return try JSONDecoder().decode(T.self, from: data)
+    }
 }

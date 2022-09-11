@@ -9,6 +9,8 @@ struct PeopleList: View {
         let people = model.people ?? []
         List(people, id: \.self) { person in
             PersonRow(person: person)
+        }.onAppear {
+            model.makeAPICallAsyncAwait()
         }.errorAlert(error: $model.error)
     }
 }

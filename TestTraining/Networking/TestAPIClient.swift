@@ -14,20 +14,30 @@ final class TestAPIClient: APIClient {
                     path: String,
                     properties: [String : Any]?,
                     completion: @escaping (Result<T, Error>) -> Void) where T: Decodable {
-        defaultSession.dataTask(with: baseURL.appendingPathComponent(path)) { data, response, error in
-            if let error = error {
+        func returnOnMainThread(error: Error) {
+            DispatchQueue.main.async {
                 completion(.failure(error))
-                return
             }
-            guard let data = data else {
-                completion(.failure(NetworkingError.noData))
-                return
-            }
-            completion(
-                Result {
-                    try JSONDecoder().decode(T.self, from: data)
+        }
+        defaultSession.dataTask(with: baseURL.appendingPathComponent(path)) { data, response, error in
+            DispatchQueue.global(qos: .background).async {
+                if let error = error {
+                    returnOnMainThread(error: error)
+                    return
                 }
-            )
+                guard let data = data else {
+                    returnOnMainThread(error: NetworkingError.noData)
+                    return
+                }
+                do {
+                    let result = try JSONDecoder().decode(T.self, from: data)
+                    DispatchQueue.main.async {
+                        completion(.success(result))
+                    }
+                } catch {
+                    returnOnMainThread(error: error)
+                }
+            }
         }.resume()
     }
 

@@ -19,14 +19,12 @@ final class ViewModel: ObservableObject {
         apiClient.perform(request: .get,
                           path: apiCallPath,
                           properties: nil) { [weak self] (result: Result<People, Error>) -> Void in
-            DispatchQueue.main.async { // TODO: this should be handled more generic
                 switch result {
                 case .success(let response):
                     self?.people = response.people
                 case .failure(let error):
                     self?.error = error
                 }
-            }
         }
     }
 

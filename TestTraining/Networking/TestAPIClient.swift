@@ -41,6 +41,8 @@ final class TestAPIClient: APIClient {
         }.resume()
     }
 
+    // 'async' functions and modules are asynchronous and return promises, they do not block the main thread
+    // Question: Does it mean it's equivalent to wrap this function into a 'DispatchQueue.global(qos: .background).async'?
     func perform<T>(request: RequestType,
                     path: String,
                     properties: [String : Any]?) async throws -> T where T: Decodable {

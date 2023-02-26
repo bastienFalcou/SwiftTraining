@@ -11,7 +11,7 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let peopleList = PeopleList(model: viewModel)
+        let peopleList = PeopleList(model: viewModel)   // Question: Is it ok to inject the ViewModel in the View?
         let controller = UIHostingController(rootView: peopleList)
         inject(controller: controller)
     }

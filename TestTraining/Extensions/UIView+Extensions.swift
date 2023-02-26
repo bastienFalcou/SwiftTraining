@@ -16,7 +16,7 @@ extension View {
     }
 }
 
-struct LocalizedAlertError: LocalizedError {
+private struct LocalizedAlertError: LocalizedError {
     let underlyingError: LocalizedError
     var errorDescription: String? {
         underlyingError.errorDescription

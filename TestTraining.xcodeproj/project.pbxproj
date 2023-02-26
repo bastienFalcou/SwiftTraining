@@ -22,11 +22,9 @@
 		0CB336FA28BAA1D000BB4383 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336F928BAA1D000BB4383 /* Person.swift */; };
 		0CB336FC28BAA2F800BB4383 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336FB28BAA2F800BB4383 /* Error.swift */; };
 		0CB336FE28BAA48A00BB4383 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336FD28BAA48A00BB4383 /* RequestType.swift */; };
-		0CB3370128BAC38400BB4383 /* PeopleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB3370028BAC38400BB4383 /* PeopleService.swift */; };
 		0CF0ED1A28C6681B00907919 /* PeopleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF0ED1928C6681B00907919 /* PeopleList.swift */; };
 		0CF0ED1C28C6683700907919 /* PeopleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF0ED1B28C6683700907919 /* PeopleRow.swift */; };
 		0CF0ED1F28C6686000907919 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF0ED1E28C6686000907919 /* UIViewController+Extensions.swift */; };
-		0CF0ED2128C6689600907919 /* UniqueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF0ED2028C6689600907919 /* UniqueIdentifier.swift */; };
 		0CF0ED2328C6AAB100907919 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF0ED2228C6AAB100907919 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,11 +65,9 @@
 		0CB336F928BAA1D000BB4383 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		0CB336FB28BAA2F800BB4383 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		0CB336FD28BAA48A00BB4383 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
-		0CB3370028BAC38400BB4383 /* PeopleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleService.swift; sourceTree = "<group>"; };
 		0CF0ED1928C6681B00907919 /* PeopleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleList.swift; sourceTree = "<group>"; };
 		0CF0ED1B28C6683700907919 /* PeopleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleRow.swift; sourceTree = "<group>"; };
 		0CF0ED1E28C6686000907919 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		0CF0ED2028C6689600907919 /* UniqueIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueIdentifier.swift; sourceTree = "<group>"; };
 		0CF0ED2228C6AAB100907919 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,7 +132,6 @@
 				0CABD2F928C540A20022FCDE /* Views */,
 				0CB336F728BA9F8E00BB4383 /* Flows */,
 				0CB336F328BA9B7800BB4383 /* Networking */,
-				0CB336FF28BAC37100BB4383 /* Services */,
 				0CB336F828BAA1C000BB4383 /* Models */,
 				0CB336BF28BA98B500BB4383 /* AppDelegate.swift */,
 				0CB336C128BA98B500BB4383 /* SceneDelegate.swift */,
@@ -189,17 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				0CB336F928BAA1D000BB4383 /* Person.swift */,
-				0CF0ED2028C6689600907919 /* UniqueIdentifier.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		0CB336FF28BAC37100BB4383 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				0CB3370028BAC38400BB4383 /* PeopleService.swift */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		0CF0ED1D28C6685100907919 /* Extensions */ = {
@@ -347,9 +333,7 @@
 				0CF0ED1F28C6686000907919 /* UIViewController+Extensions.swift in Sources */,
 				0CB336F228BA9B7100BB4383 /* TestAPIClient.swift in Sources */,
 				0CB336C028BA98B500BB4383 /* AppDelegate.swift in Sources */,
-				0CB3370128BAC38400BB4383 /* PeopleService.swift in Sources */,
 				0CB336C228BA98B500BB4383 /* SceneDelegate.swift in Sources */,
-				0CF0ED2128C6689600907919 /* UniqueIdentifier.swift in Sources */,
 				0CB336FA28BAA1D000BB4383 /* Person.swift in Sources */,
 				0CB336F528BA9F7E00BB4383 /* ViewModel.swift in Sources */,
 				0CB336F028BA9A7200BB4383 /* APIClient.swift in Sources */,

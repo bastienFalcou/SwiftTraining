@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C54F3ED29B631BB000D16EA /* ObservableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54F3EC29B631BB000D16EA /* ObservableViewModel.swift */; };
+		0C54F3EF29B631E0000D16EA /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54F3EE29B631E0000D16EA /* ViewModelProtocol.swift */; };
+		0C54F3F129B63208000D16EA /* EventMananger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54F3F029B63208000D16EA /* EventMananger.swift */; };
+		0C54F3F329B632B1000D16EA /* ViewModelObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54F3F229B632B1000D16EA /* ViewModelObserver.swift */; };
+		0C54F3F529B63355000D16EA /* WithViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54F3F429B63355000D16EA /* WithViewModel.swift */; };
+		0C54F3F729B63386000D16EA /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54F3F629B63386000D16EA /* Bindable.swift */; };
+		0C54F3F929B633BF000D16EA /* View+Bind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54F3F829B633BF000D16EA /* View+Bind.swift */; };
+		0C54F3FB29B6359B000D16EA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54F3FA29B6359B000D16EA /* ViewModel.swift */; };
+		0C54F3FD29B63A7B000D16EA /* PeopleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54F3FC29B63A7B000D16EA /* PeopleList.swift */; };
+		0C54F3FF29B63D48000D16EA /* ViewControllerLegacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54F3FE29B63D48000D16EA /* ViewControllerLegacy.swift */; };
 		0CB336C028BA98B500BB4383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336BF28BA98B500BB4383 /* AppDelegate.swift */; };
 		0CB336C228BA98B500BB4383 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336C128BA98B500BB4383 /* SceneDelegate.swift */; };
 		0CB336C428BA98B500BB4383 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336C328BA98B500BB4383 /* ViewController.swift */; };
@@ -18,11 +28,11 @@
 		0CB336E328BA98B700BB4383 /* TestTrainingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336E228BA98B700BB4383 /* TestTrainingUITestsLaunchTests.swift */; };
 		0CB336F028BA9A7200BB4383 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336EF28BA9A7200BB4383 /* APIClient.swift */; };
 		0CB336F228BA9B7100BB4383 /* TestAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336F128BA9B7100BB4383 /* TestAPIClient.swift */; };
-		0CB336F528BA9F7E00BB4383 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336F428BA9F7E00BB4383 /* ViewModel.swift */; };
+		0CB336F528BA9F7E00BB4383 /* ViewModelLegacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336F428BA9F7E00BB4383 /* ViewModelLegacy.swift */; };
 		0CB336FA28BAA1D000BB4383 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336F928BAA1D000BB4383 /* Person.swift */; };
 		0CB336FC28BAA2F800BB4383 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336FB28BAA2F800BB4383 /* Error.swift */; };
 		0CB336FE28BAA48A00BB4383 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336FD28BAA48A00BB4383 /* RequestType.swift */; };
-		0CF0ED1A28C6681B00907919 /* PeopleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF0ED1928C6681B00907919 /* PeopleList.swift */; };
+		0CF0ED1A28C6681B00907919 /* PeopleListLegacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF0ED1928C6681B00907919 /* PeopleListLegacy.swift */; };
 		0CF0ED1C28C6683700907919 /* PeopleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF0ED1B28C6683700907919 /* PeopleRow.swift */; };
 		0CF0ED1F28C6686000907919 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF0ED1E28C6686000907919 /* UIViewController+Extensions.swift */; };
 		0CF0ED2328C6AAB100907919 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF0ED2228C6AAB100907919 /* UIView+Extensions.swift */; };
@@ -46,6 +56,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C54F3EC29B631BB000D16EA /* ObservableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableViewModel.swift; sourceTree = "<group>"; };
+		0C54F3EE29B631E0000D16EA /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		0C54F3F029B63208000D16EA /* EventMananger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMananger.swift; sourceTree = "<group>"; };
+		0C54F3F229B632B1000D16EA /* ViewModelObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelObserver.swift; sourceTree = "<group>"; };
+		0C54F3F429B63355000D16EA /* WithViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithViewModel.swift; sourceTree = "<group>"; };
+		0C54F3F629B63386000D16EA /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		0C54F3F829B633BF000D16EA /* View+Bind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Bind.swift"; sourceTree = "<group>"; };
+		0C54F3FA29B6359B000D16EA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		0C54F3FC29B63A7B000D16EA /* PeopleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleList.swift; sourceTree = "<group>"; };
+		0C54F3FE29B63D48000D16EA /* ViewControllerLegacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLegacy.swift; sourceTree = "<group>"; };
 		0CB336BC28BA98B500BB4383 /* TestTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CB336BF28BA98B500BB4383 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CB336C128BA98B500BB4383 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,11 +81,11 @@
 		0CB336E228BA98B700BB4383 /* TestTrainingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTrainingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0CB336EF28BA9A7200BB4383 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		0CB336F128BA9B7100BB4383 /* TestAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAPIClient.swift; sourceTree = "<group>"; };
-		0CB336F428BA9F7E00BB4383 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		0CB336F428BA9F7E00BB4383 /* ViewModelLegacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelLegacy.swift; sourceTree = "<group>"; };
 		0CB336F928BAA1D000BB4383 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		0CB336FB28BAA2F800BB4383 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		0CB336FD28BAA48A00BB4383 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
-		0CF0ED1928C6681B00907919 /* PeopleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleList.swift; sourceTree = "<group>"; };
+		0CF0ED1928C6681B00907919 /* PeopleListLegacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListLegacy.swift; sourceTree = "<group>"; };
 		0CF0ED1B28C6683700907919 /* PeopleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleRow.swift; sourceTree = "<group>"; };
 		0CF0ED1E28C6686000907919 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		0CF0ED2228C6AAB100907919 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -96,11 +116,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C54F3EB29B63194000D16EA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0C54F3EC29B631BB000D16EA /* ObservableViewModel.swift */,
+				0C54F3EE29B631E0000D16EA /* ViewModelProtocol.swift */,
+				0C54F3F029B63208000D16EA /* EventMananger.swift */,
+				0C54F3F229B632B1000D16EA /* ViewModelObserver.swift */,
+				0C54F3F429B63355000D16EA /* WithViewModel.swift */,
+				0C54F3F629B63386000D16EA /* Bindable.swift */,
+				0C54F3F829B633BF000D16EA /* View+Bind.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		0CABD2F928C540A20022FCDE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0CF0ED1928C6681B00907919 /* PeopleList.swift */,
+				0C54F3FC29B63A7B000D16EA /* PeopleList.swift */,
 				0CF0ED1B28C6683700907919 /* PeopleRow.swift */,
+				0CF0ED1928C6681B00907919 /* PeopleListLegacy.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -133,6 +168,7 @@
 				0CB336F728BA9F8E00BB4383 /* Flows */,
 				0CB336F328BA9B7800BB4383 /* Networking */,
 				0CB336F828BAA1C000BB4383 /* Models */,
+				0C54F3EB29B63194000D16EA /* Helpers */,
 				0CB336BF28BA98B500BB4383 /* AppDelegate.swift */,
 				0CB336C128BA98B500BB4383 /* SceneDelegate.swift */,
 				0CB336C528BA98B500BB4383 /* Main.storyboard */,
@@ -175,7 +211,9 @@
 			isa = PBXGroup;
 			children = (
 				0CB336C328BA98B500BB4383 /* ViewController.swift */,
-				0CB336F428BA9F7E00BB4383 /* ViewModel.swift */,
+				0C54F3FA29B6359B000D16EA /* ViewModel.swift */,
+				0C54F3FE29B63D48000D16EA /* ViewControllerLegacy.swift */,
+				0CB336F428BA9F7E00BB4383 /* ViewModelLegacy.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -329,17 +367,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CB336FC28BAA2F800BB4383 /* Error.swift in Sources */,
+				0C54F3F929B633BF000D16EA /* View+Bind.swift in Sources */,
+				0C54F3ED29B631BB000D16EA /* ObservableViewModel.swift in Sources */,
+				0C54F3F729B63386000D16EA /* Bindable.swift in Sources */,
 				0CB336C428BA98B500BB4383 /* ViewController.swift in Sources */,
 				0CF0ED1F28C6686000907919 /* UIViewController+Extensions.swift in Sources */,
 				0CB336F228BA9B7100BB4383 /* TestAPIClient.swift in Sources */,
 				0CB336C028BA98B500BB4383 /* AppDelegate.swift in Sources */,
 				0CB336C228BA98B500BB4383 /* SceneDelegate.swift in Sources */,
+				0C54F3FF29B63D48000D16EA /* ViewControllerLegacy.swift in Sources */,
 				0CB336FA28BAA1D000BB4383 /* Person.swift in Sources */,
-				0CB336F528BA9F7E00BB4383 /* ViewModel.swift in Sources */,
+				0CB336F528BA9F7E00BB4383 /* ViewModelLegacy.swift in Sources */,
+				0C54F3F129B63208000D16EA /* EventMananger.swift in Sources */,
 				0CB336F028BA9A7200BB4383 /* APIClient.swift in Sources */,
-				0CF0ED1A28C6681B00907919 /* PeopleList.swift in Sources */,
+				0C54F3FB29B6359B000D16EA /* ViewModel.swift in Sources */,
+				0CF0ED1A28C6681B00907919 /* PeopleListLegacy.swift in Sources */,
+				0C54F3EF29B631E0000D16EA /* ViewModelProtocol.swift in Sources */,
 				0CF0ED2328C6AAB100907919 /* UIView+Extensions.swift in Sources */,
+				0C54F3F529B63355000D16EA /* WithViewModel.swift in Sources */,
 				0CB336FE28BAA48A00BB4383 /* RequestType.swift in Sources */,
+				0C54F3F329B632B1000D16EA /* ViewModelObserver.swift in Sources */,
+				0C54F3FD29B63A7B000D16EA /* PeopleList.swift in Sources */,
 				0CF0ED1C28C6683700907919 /* PeopleRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -3,14 +3,17 @@
 import SwiftUI
 
 struct PeopleList: View {
-    @ObservedObject var model: ViewModel
+    private let apiClient = TestAPIClient(baseURL: URL(string: "https://gist.githubusercontent.com/russellbstephens/")!)
+
+    @Binding var peopleToDisplay: [Person]?     // Question: Do I really need this in the View?
 
     var body: some View {
-        let people = model.people ?? []
-        List(people, id: \.self) { person in
-            PersonRow(person: person)
-        }.onAppear {
-            model.makeAPICallAsyncAwait()
-        }.errorAlert(error: $model.error)
+        WithViewModel(ViewModel(apiClient: apiClient)) { viewModel in
+            List(viewModel.state.people ?? [], id: \.self) { person in
+                PersonRow(person: person)
+            }.task {
+                await viewModel.makeAPICallAsyncAwait()
+            }
+        }.bind(\.people, to: peopleToDisplay)
     }
 }

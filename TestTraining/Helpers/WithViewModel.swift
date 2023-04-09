@@ -13,8 +13,18 @@ public struct WithViewModel<ViewModel: ViewModelProtocol, Content: View>: View {
 
     private var bindings: (ViewModel) -> AnyView = { _ in EmptyView().eraseToAnyView() }
 
-    public init(_ viewModel: @autoclosure @escaping () -> ViewModel, @ViewBuilder content: @escaping (ViewModel) -> Content) {
-        _viewModel = StateObject(wrappedValue: viewModel())
+    public init(
+        _ viewModel: @autoclosure @escaping () -> ViewModel,
+        observing observeClosure: ((ViewModel) -> Void)? = nil,
+        @ViewBuilder content: @escaping (ViewModel) -> Content
+    ) {
+        _viewModel = StateObject(
+            wrappedValue: {
+                let viewModel = viewModel()
+                observeClosure?(viewModel)
+                return viewModel
+            }()
+        )
         self.content = content
     }
 

@@ -17,6 +17,8 @@
 		0C54F3FB29B6359B000D16EA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54F3FA29B6359B000D16EA /* ViewModel.swift */; };
 		0C54F3FD29B63A7B000D16EA /* PeopleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54F3FC29B63A7B000D16EA /* PeopleList.swift */; };
 		0C54F3FF29B63D48000D16EA /* ViewControllerLegacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54F3FE29B63D48000D16EA /* ViewControllerLegacy.swift */; };
+		0C99F6DA29E324B000828F00 /* EditPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99F6D929E324B000828F00 /* EditPersonView.swift */; };
+		0C99F6DC29E3254900828F00 /* EditPersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99F6DB29E3254900828F00 /* EditPersonViewModel.swift */; };
 		0CB336C028BA98B500BB4383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336BF28BA98B500BB4383 /* AppDelegate.swift */; };
 		0CB336C228BA98B500BB4383 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336C128BA98B500BB4383 /* SceneDelegate.swift */; };
 		0CB336C428BA98B500BB4383 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336C328BA98B500BB4383 /* ViewController.swift */; };
@@ -66,6 +68,8 @@
 		0C54F3FA29B6359B000D16EA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		0C54F3FC29B63A7B000D16EA /* PeopleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleList.swift; sourceTree = "<group>"; };
 		0C54F3FE29B63D48000D16EA /* ViewControllerLegacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLegacy.swift; sourceTree = "<group>"; };
+		0C99F6D929E324B000828F00 /* EditPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonView.swift; sourceTree = "<group>"; };
+		0C99F6DB29E3254900828F00 /* EditPersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonViewModel.swift; sourceTree = "<group>"; };
 		0CB336BC28BA98B500BB4383 /* TestTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CB336BF28BA98B500BB4383 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CB336C128BA98B500BB4383 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 				0C54F3FC29B63A7B000D16EA /* PeopleList.swift */,
 				0CF0ED1B28C6683700907919 /* PeopleRow.swift */,
 				0CF0ED1928C6681B00907919 /* PeopleListLegacy.swift */,
+				0C99F6D929E324B000828F00 /* EditPersonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 				0C54F3FA29B6359B000D16EA /* ViewModel.swift */,
 				0C54F3FE29B63D48000D16EA /* ViewControllerLegacy.swift */,
 				0CB336F428BA9F7E00BB4383 /* ViewModelLegacy.swift */,
+				0C99F6DB29E3254900828F00 /* EditPersonViewModel.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -374,6 +380,7 @@
 				0CF0ED1F28C6686000907919 /* UIViewController+Extensions.swift in Sources */,
 				0CB336F228BA9B7100BB4383 /* TestAPIClient.swift in Sources */,
 				0CB336C028BA98B500BB4383 /* AppDelegate.swift in Sources */,
+				0C99F6DC29E3254900828F00 /* EditPersonViewModel.swift in Sources */,
 				0CB336C228BA98B500BB4383 /* SceneDelegate.swift in Sources */,
 				0C54F3FF29B63D48000D16EA /* ViewControllerLegacy.swift in Sources */,
 				0CB336FA28BAA1D000BB4383 /* Person.swift in Sources */,
@@ -389,6 +396,7 @@
 				0C54F3F329B632B1000D16EA /* ViewModelObserver.swift in Sources */,
 				0C54F3FD29B63A7B000D16EA /* PeopleList.swift in Sources */,
 				0CF0ED1C28C6683700907919 /* PeopleRow.swift in Sources */,
+				0C99F6DA29E324B000828F00 /* EditPersonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

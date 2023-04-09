@@ -12,35 +12,48 @@ struct EditPersonView: View {
     var body: some View {
         NavigationView {
             WithViewModel(EditPersonViewModel(person: person)) { viewModel in
-                VStack {
-                    HStack {
-                        Text("Name")
-                            .bold()
+                // TODO: Display error if validation failed
+                if let error = viewModel.state.error {
+                    VStack {
+                        Text("An error occured:")
+                        Text("\(error.localizedDescription)")
                         Spacer()
-                        TextField("Name", text: viewModel.binding(\.name))
+                            .frame(height: 16.0)
+                        Button("Try Again?") {
+                            viewModel.reset()
+                        }
                     }
-                    HStack {
-                        Text("Language")
-                            .bold()
+                } else {
+                    VStack {
+                        HStack {
+                            Text("Name")
+                                .bold()
+                            Spacer()
+                            TextField("Name", text: viewModel.binding(\.name))
+                        }
+                        HStack {
+                            Text("Language")
+                                .bold()
+                            Spacer()
+                            TextField("Language", text: viewModel.binding(\.language))
+                        }
                         Spacer()
-                        TextField("Language", text: viewModel.binding(\.language))
                     }
-                    Spacer()
+                        .navigationTitle("Edit \(viewModel.name)")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .toolbar {
+                            ToolbarItem(placement: .cancellationAction) {
+                                Button("Cancel") {
+                                    viewModel.send(.cancel)
+                                }
+                            }
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                Button("Submit") {
+                                    viewModel.send(.submit(viewModel.person))
+                                }
+                            }
+                        }
                 }
-                    .navigationTitle("Edit \(viewModel.name)")
-                    .navigationBarTitleDisplayMode(.inline)
-                    .toolbar {
-                        ToolbarItem(placement: .cancellationAction) {
-                            Button("Cancel") {
-                                viewModel.send(.cancel)
-                            }
-                        }
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            Button("Submit") {
-                                viewModel.send(.submit(viewModel.person))
-                            }
-                        }
-                    }
             }
         }
     }
@@ -56,10 +69,4 @@ private extension HorizontalAlignment {
     static let textFieldAlignmentGuide = HorizontalAlignment(
         TextFieldAlignment.self
     )
-}
-
-struct EditPersonView_Preview: PreviewProvider {
-    static var previews: some View {
-        EditPersonView(person: .init(name: "Stéphaneasdasda", language: "Swift"))
-    }
 }

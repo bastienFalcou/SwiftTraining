@@ -12,6 +12,11 @@ final class EditPersonViewModel: ViewModelProtocol, ObservableViewModel {
         let id: String
         var name: String
         var language: String
+        var error: Error?
+
+        static func == (lhs: EditPersonViewModel.State, rhs: EditPersonViewModel.State) -> Bool {
+            lhs.id == rhs.id
+        }
     }
 
     @Published private(set) var state: State
@@ -29,6 +34,26 @@ final class EditPersonViewModel: ViewModelProtocol, ObservableViewModel {
             name: person.name,
             language: person.language ?? ""
         )
+
+        // TODO: Observe state changes...
+        observe(EditPersonViewModel.self) { event in
+            switch event {
+            case .submit(let person):
+                do {
+                    try self.validateInput(person)
+                    self.state.name = person.name
+                    self.state.language = person.language ?? ""
+                } catch {
+                    self.state.error = error
+                }
+            case .cancel:
+                print("operation was cancelled")
+            }
+        }
+    }
+
+    func reset() {
+        state.error = nil
     }
 
     func binding<Value>(_ keyPath: WritableKeyPath<State, Value>) -> Binding<Value> where Value : Equatable {
@@ -36,6 +61,23 @@ final class EditPersonViewModel: ViewModelProtocol, ObservableViewModel {
             self.state[keyPath: keyPath]
         } set: {
             self.state[keyPath: keyPath] = $0
+        }
+    }
+}
+
+// TODO: Validation logic...
+extension EditPersonViewModel {
+    enum ValidationError: Error {
+        case incorrectName
+        case incorrectLanguage
+    }
+
+    private func validateInput(_ person: Person) throws {
+        guard !person.name.isEmpty else {
+            throw ValidationError.incorrectName
+        }
+        guard let language = person.language?.uppercased(), ["Swift", "Objective-C", "Kotlin", "C++", "Java"].map({ $0.uppercased() }).contains(language) else {
+            throw ValidationError.incorrectLanguage
         }
     }
 }

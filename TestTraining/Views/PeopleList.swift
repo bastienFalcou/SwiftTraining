@@ -86,6 +86,7 @@ struct PeopleList: View {
             }
             .sheet(item: $selectedPerson) { person in
                 EditPersonView(person: person)
+                // TODO: Listen to state changes here and dismiss view / update list
             }
         }
     }

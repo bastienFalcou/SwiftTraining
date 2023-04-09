@@ -137,6 +137,8 @@
 		0CABD2F928C540A20022FCDE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0CB336C328BA98B500BB4383 /* ViewController.swift */,
+				0C54F3FE29B63D48000D16EA /* ViewControllerLegacy.swift */,
 				0C54F3FC29B63A7B000D16EA /* PeopleList.swift */,
 				0CF0ED1B28C6683700907919 /* PeopleRow.swift */,
 				0CF0ED1928C6681B00907919 /* PeopleListLegacy.swift */,
@@ -215,11 +217,9 @@
 		0CB336F728BA9F8E00BB4383 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
-				0CB336C328BA98B500BB4383 /* ViewController.swift */,
 				0C54F3FA29B6359B000D16EA /* ViewModel.swift */,
-				0C54F3FE29B63D48000D16EA /* ViewControllerLegacy.swift */,
-				0CB336F428BA9F7E00BB4383 /* ViewModelLegacy.swift */,
 				0C99F6DB29E3254900828F00 /* EditPersonViewModel.swift */,
+				0CB336F428BA9F7E00BB4383 /* ViewModelLegacy.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";

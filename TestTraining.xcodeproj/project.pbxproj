@@ -19,6 +19,14 @@
 		0C54F3FF29B63D48000D16EA /* ViewControllerLegacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54F3FE29B63D48000D16EA /* ViewControllerLegacy.swift */; };
 		0C99F6DA29E324B000828F00 /* EditPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99F6D929E324B000828F00 /* EditPersonView.swift */; };
 		0C99F6DC29E3254900828F00 /* EditPersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99F6DB29E3254900828F00 /* EditPersonViewModel.swift */; };
+		0C99F6E029E3454C00828F00 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99F6DD29E344EF00828F00 /* TestViewModel.swift */; };
+		0C99F6E129E3456100828F00 /* ObservableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54F3EC29B631BB000D16EA /* ObservableViewModel.swift */; };
+		0C99F6E229E3456A00828F00 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54F3EE29B631E0000D16EA /* ViewModelProtocol.swift */; };
+		0C99F6E329E3456F00828F00 /* EventMananger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54F3F029B63208000D16EA /* EventMananger.swift */; };
+		0C99F6E429E3457600828F00 /* ViewModelObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54F3F229B632B1000D16EA /* ViewModelObserver.swift */; };
+		0C99F6E629E3CFB900828F00 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99F6E529E3CFB900828F00 /* ViewModelTests.swift */; };
+		0C99F6E729E3D06900828F00 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336F928BAA1D000BB4383 /* Person.swift */; };
+		0C99F6E829E3D0AF00828F00 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54F3FA29B6359B000D16EA /* ViewModel.swift */; };
 		0CB336C028BA98B500BB4383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336BF28BA98B500BB4383 /* AppDelegate.swift */; };
 		0CB336C228BA98B500BB4383 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336C128BA98B500BB4383 /* SceneDelegate.swift */; };
 		0CB336C428BA98B500BB4383 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336C328BA98B500BB4383 /* ViewController.swift */; };
@@ -70,6 +78,8 @@
 		0C54F3FE29B63D48000D16EA /* ViewControllerLegacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLegacy.swift; sourceTree = "<group>"; };
 		0C99F6D929E324B000828F00 /* EditPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonView.swift; sourceTree = "<group>"; };
 		0C99F6DB29E3254900828F00 /* EditPersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonViewModel.swift; sourceTree = "<group>"; };
+		0C99F6DD29E344EF00828F00 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
+		0C99F6E529E3CFB900828F00 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		0CB336BC28BA98B500BB4383 /* TestTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CB336BF28BA98B500BB4383 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CB336C128BA98B500BB4383 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				0CB336D628BA98B700BB4383 /* TestTrainingTests.swift */,
+				0C99F6DD29E344EF00828F00 /* TestViewModel.swift */,
+				0C99F6E529E3CFB900828F00 /* ViewModelTests.swift */,
 			);
 			path = TestTrainingTests;
 			sourceTree = "<group>";
@@ -404,7 +416,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C99F6E429E3457600828F00 /* ViewModelObserver.swift in Sources */,
+				0C99F6E829E3D0AF00828F00 /* ViewModel.swift in Sources */,
+				0C99F6E229E3456A00828F00 /* ViewModelProtocol.swift in Sources */,
+				0C99F6E029E3454C00828F00 /* TestViewModel.swift in Sources */,
 				0CB336D728BA98B700BB4383 /* TestTrainingTests.swift in Sources */,
+				0C99F6E329E3456F00828F00 /* EventMananger.swift in Sources */,
+				0C99F6E629E3CFB900828F00 /* ViewModelTests.swift in Sources */,
+				0C99F6E729E3D06900828F00 /* Person.swift in Sources */,
+				0C99F6E129E3456100828F00 /* ObservableViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

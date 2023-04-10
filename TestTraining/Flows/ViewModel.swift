@@ -44,10 +44,4 @@ final class ViewModel: ObservableViewModel {
             self.state[keyPath: keyPath] = $0
         }
     }
-
-    func update(person: Person) {
-        if let index = state.people?.firstIndex(of: person) {
-            state.people?[index] = person
-        }
-    }
 }

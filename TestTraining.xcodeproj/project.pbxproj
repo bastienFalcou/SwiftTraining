@@ -27,6 +27,7 @@
 		0C99F6E729E3D06900828F00 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336F928BAA1D000BB4383 /* Person.swift */; };
 		0C99F6E929E3D15600828F00 /* EditPersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99F6DB29E3254900828F00 /* EditPersonViewModel.swift */; };
 		0C99F6EB29E3D34300828F00 /* EditPersonViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C99F6EA29E3D34300828F00 /* EditPersonViewModelTests.swift */; };
+		0C99F6F029E518BB00828F00 /* CustomDump in Frameworks */ = {isa = PBXBuildFile; productRef = 0C99F6EF29E518BB00828F00 /* CustomDump */; };
 		0CB336C028BA98B500BB4383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336BF28BA98B500BB4383 /* AppDelegate.swift */; };
 		0CB336C228BA98B500BB4383 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336C128BA98B500BB4383 /* SceneDelegate.swift */; };
 		0CB336C428BA98B500BB4383 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB336C328BA98B500BB4383 /* ViewController.swift */; };
@@ -110,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C99F6F029E518BB00828F00 /* CustomDump in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +271,9 @@
 			dependencies = (
 			);
 			name = TestTraining;
+			packageProductDependencies = (
+				0C99F6EF29E518BB00828F00 /* CustomDump */,
+			);
 			productName = TestTraining;
 			productReference = 0CB336BC28BA98B500BB4383 /* TestTraining.app */;
 			productType = "com.apple.product-type.application";
@@ -341,6 +346,9 @@
 				Base,
 			);
 			mainGroup = 0CB336B328BA98B500BB4383;
+			packageReferences = (
+				0C99F6EE29E518BB00828F00 /* XCRemoteSwiftPackageReference "swift-custom-dump" */,
+			);
 			productRefGroup = 0CB336BD28BA98B500BB4383 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -780,6 +788,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0C99F6EE29E518BB00828F00 /* XCRemoteSwiftPackageReference "swift-custom-dump" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-custom-dump";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0C99F6EF29E518BB00828F00 /* CustomDump */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0C99F6EE29E518BB00828F00 /* XCRemoteSwiftPackageReference "swift-custom-dump" */;
+			productName = CustomDump;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0CB336B428BA98B500BB4383 /* Project object */;
 }

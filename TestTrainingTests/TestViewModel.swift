@@ -1,5 +1,6 @@
 //  Created by Bastien Falcou on 4/9/23.
 
+import CustomDump
 import XCTest
 import SwiftUI
 import Combine

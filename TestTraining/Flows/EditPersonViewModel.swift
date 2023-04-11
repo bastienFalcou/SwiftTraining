@@ -13,6 +13,7 @@ final class EditPersonViewModel: ViewModelProtocol, ObservableViewModel {
         var name: String
         var language: String
         var error: Error?
+        var updatedOnServer = false // TODO: Used for testing of unit tests
 
         static func == (lhs: EditPersonViewModel.State, rhs: EditPersonViewModel.State) -> Bool {
             lhs.id == rhs.id
@@ -50,6 +51,13 @@ final class EditPersonViewModel: ViewModelProtocol, ObservableViewModel {
                 print("operation was cancelled")
             }
         }
+    }
+
+    // TODO: Used for testing of unit tests
+    func updatePersonOnServer() async throws {
+        state.updatedOnServer = false
+        try await Task.sleep(nanoseconds: 3_000_000_000)
+        state.updatedOnServer = true
     }
 
     func reset() {

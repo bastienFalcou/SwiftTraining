@@ -5,6 +5,7 @@ import SwiftUI
 final class EditPersonViewModel: ViewModelProtocol, ObservableViewModel {
     enum Event {
         case cancel
+        case formInputChange
         case submit(Person)
     }
 
@@ -36,27 +37,27 @@ final class EditPersonViewModel: ViewModelProtocol, ObservableViewModel {
             language: person.language ?? ""
         )
 
-        // TODO: Observe state changes...
         observe(EditPersonViewModel.self) { event in
             switch event {
-            case .submit(let person):
+            case .formInputChange:
                 do {
-                    try self.validateInput(person)
-                    self.state.name = person.name
-                    self.state.language = person.language ?? ""
+                    try self.validateInput(self.person)
+                    self.state.name = self.person.name
+                    self.state.language = self.person.language ?? ""
+                    self.state.error = nil
                 } catch {
                     self.state.error = error
                 }
-            case .cancel:
-                print("operation was cancelled")
+            default:
+                break
             }
         }
     }
 
     // TODO: Used for testing of unit tests
-    func updatePersonOnServer() async throws {
+    func updatePersonOnServer() async {
         state.updatedOnServer = false
-        try await Task.sleep(nanoseconds: 3_000_000_000)
+        try! await Task.sleep(nanoseconds: 3_000_000_000)
         state.updatedOnServer = true
     }
 
@@ -73,19 +74,25 @@ final class EditPersonViewModel: ViewModelProtocol, ObservableViewModel {
     }
 }
 
-// TODO: Validation logic...
 extension EditPersonViewModel {
-    enum ValidationError: Error {
-        case incorrectName
-        case incorrectLanguage
+    enum ValidationError: Error, LocalizedError {
+        case nameEmpty
+        case languageIncorrect
+
+        var errorDescription: String {
+            switch self {
+            case .nameEmpty: return "The name cannot be empty"
+            case .languageIncorrect: return "This is not a valid programming language"
+            }
+        }
     }
 
     private func validateInput(_ person: Person) throws {
         guard !person.name.isEmpty else {
-            throw ValidationError.incorrectName
+            throw ValidationError.nameEmpty
         }
         guard let language = person.language?.uppercased(), ["Swift", "Objective-C", "Kotlin", "C++", "Java"].map({ $0.uppercased() }).contains(language) else {
-            throw ValidationError.incorrectLanguage
+            throw ValidationError.languageIncorrect
         }
     }
 }

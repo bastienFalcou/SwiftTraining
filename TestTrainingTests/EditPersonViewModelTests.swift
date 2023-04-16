@@ -16,8 +16,8 @@ final class EditPersonViewModelTests: XCTestCase {
         let person = Person(name: "Bastien", language: "Swift")
         let viewModel = EditPersonViewModel(person: person)
 
-        try await viewModel.assertThrowing(
-            try await viewModel.updatePersonOnServer(),
+        await viewModel.assert(
+            await viewModel.updatePersonOnServer(),
             beforeSuspension: {
                 $0.updatedOnServer = false
             },

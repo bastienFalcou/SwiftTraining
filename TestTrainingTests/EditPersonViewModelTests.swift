@@ -12,77 +12,48 @@ final class EditPersonViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.person.language, person.language)
     }
 
-    func testEdit() async throws {
+    func testEdit() {
         let person = Person(name: "Bastien", language: "Swift")
         let viewModel = EditPersonViewModel(person: person)
 
-        await viewModel.assert(
-            await viewModel.updatePersonOnServer(),
-            beforeSuspension: {
-                $0.updatedOnServer = false
-            },
-            afterSuspension: {
-                $0.updatedOnServer = true
-            }
-        )
+        runAsyncTest {
+            XCTAssertFalse(viewModel.state.updatedOnServer)
+            await viewModel.updatePersonOnServer()
+            XCTAssertTrue(viewModel.state.updatedOnServer)
+        }
     }
+}
 
-//    func testFetchAllListings() async {
-//        let allPersons = allPersons
-//        let viewModel = ListingsViewModel(allListings: [])
-//
-//        await viewModel.assert(
-//            await viewModel.fetchAllListings(),
-//            beforeSuspension: {
-//                $0.loading = true
-//            },
-//            afterSuspension: {
-//                $0.loading = false
-//                $0.allListings = allListings
-//                $0.listings = allListings
-//            }
-//        )
-//    }
-//
-//    func testPerformSearch() async throws {
-//        let allPersons = allPersons
-//        let viewModel = ListingsViewModel(allListings: allListings)
-//
-//        try await viewModel.assertThrowing(
-//            try await viewModel.performSearch("L"),
-//            beforeSuspension: {
-//                $0.searchTerm = "L"
-//            },
-//            afterSuspension: {
-//                $0.listings = allListings
-//            }
-//        )
-//
-//        try await viewModel.assertThrowing(
-//            try await viewModel.performSearch("Li"),
-//            beforeSuspension: {
-//                $0.searchTerm = "Li"
-//            },
-//            afterSuspension: {
-//                $0.listings = allListings
-//            }
-//        )
-//
-//        try await viewModel.assertThrowing(
-//            try await viewModel.performSearch("Listing 1"),
-//            beforeSuspension: {
-//                $0.searchTerm = "Listing 1"
-//            },
-//            afterSuspension: {
-//                $0.listings = [allListings[0]]
-//            }
-//        )
-//    }
-//
-//    var allPersons: [Person] {
-//        [
-//            Person(name: "Bastien", language: "Swift"),
-//            Person(name: "Dante", language: "Java")
-//        ]
-//    }
+extension XCTestCase {
+    func runAsyncTest(
+        named testName: String = #function,
+        in file: StaticString = #file,
+        at line: UInt = #line,
+        withTimeout timeout: TimeInterval = 10,
+        test: @escaping () async throws -> Void
+    ) {
+        var thrownError: Error?
+        let errorHandler = { thrownError = $0 }
+        let expectation = expectation(description: testName)
+
+        Task {
+            do {
+                try await test()
+            } catch {
+                errorHandler(error)
+            }
+
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: timeout)
+
+        if let error = thrownError {
+            XCTFail(
+                "Async error thrown: \(error)",
+                file: file,
+                line: line
+            )
+        }
+    }
 }

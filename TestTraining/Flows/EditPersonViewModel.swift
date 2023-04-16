@@ -14,7 +14,7 @@ final class EditPersonViewModel: ViewModelProtocol, ObservableViewModel {
         var name: String
         var language: String
         var error: Error?
-        var updatedOnServer = false // TODO: Used for testing of unit tests
+        var updatedOnServer = false // Used for testing of unit tests
 
         static func == (lhs: EditPersonViewModel.State, rhs: EditPersonViewModel.State) -> Bool {
             lhs.id == rhs.id
@@ -54,10 +54,10 @@ final class EditPersonViewModel: ViewModelProtocol, ObservableViewModel {
         }
     }
 
-    // TODO: Used for testing of unit tests
-    func updatePersonOnServer() async {
+    // Used for testing of unit tests
+    @MainActor func updatePersonOnServer() async {
         state.updatedOnServer = false
-        try! await Task.sleep(nanoseconds: 3_000_000_000)
+        try! await Task.sleep(nanoseconds: 250_000_000)
         state.updatedOnServer = true
     }
 
@@ -91,8 +91,9 @@ extension EditPersonViewModel {
         guard !person.name.isEmpty else {
             throw ValidationError.nameEmpty
         }
-        guard let language = person.language?.uppercased(), ["Swift", "Objective-C", "Kotlin", "C++", "Java"].map({ $0.uppercased() }).contains(language) else {
-            throw ValidationError.languageIncorrect
+        guard let language = person.language?.uppercased(),
+            ["Swift", "Objective-C", "Kotlin", "C++", "Java"].map({ $0.uppercased() }).contains(language) else {
+                throw ValidationError.languageIncorrect
         }
     }
 }

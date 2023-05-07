@@ -10,5 +10,9 @@ protocol APIClient {
                                completion: @escaping (Result<T,Error>) -> Void)
     func perform<T: Decodable>(request: RequestType,
                                path: String,
-                               properties: [String : Any]?) async throws -> T
+                               properties: [String: Any]?,
+                               completion: @escaping (_ result: Result<T,Error>, _ cache: Bool) -> Void) async
+    func perform<T: Decodable>(request: RequestType,
+                               path: String,
+                               properties: [String : Any]?) async throws -> T where T: Decodable
 }

@@ -3,7 +3,8 @@
 import SwiftUI
 
 struct PeopleList: View {
-    private let apiClient = TestAPIClient(baseURL: URL(string: "https://gist.githubusercontent.com/russellbstephens/")!)
+    private let apiClient = TestAPIClient(baseURL: URL(string: "https://gist.githubusercontent.com/russellbstephens/")!,
+                                          cachingService: CachingService())
 
     @State private var selectedPerson: Person?
     @State private var receivedErrorInfo: (error: Error, task: Task<Void, Error>)? {

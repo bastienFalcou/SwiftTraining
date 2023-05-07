@@ -5,7 +5,7 @@ import SwiftUI
 import Combine
 
 final class ViewControllerLegacy: UIViewController {
-    private var viewModel = LegacyViewModel(apiClient: TestAPIClient(baseURL: URL(string: "https://gist.githubusercontent.com/russellbstephens/")!))
+    private var viewModel = LegacyViewModel(apiClient: TestAPIClient(baseURL: URL(string: "https://gist.githubusercontent.com/russellbstephens/")!, cachingService: CachingService()))
     private var cancellable: AnyCancellable?
 
     override func viewDidLoad() {

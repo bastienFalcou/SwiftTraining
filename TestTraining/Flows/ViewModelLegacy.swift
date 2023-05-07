@@ -32,10 +32,10 @@ final class LegacyViewModel: ObservableObject {
     @MainActor
     func makeAPICallAsyncAwait() async {
         do {
-            let people: People = try await apiClient.perform(request: .get,
-                                                             path: apiCallPath,
-                                                             properties: nil)
-            self.people = people.people
+            let response: People = try await apiClient.perform(request: .get,
+                                                               path: apiCallPath,
+                                                               properties: nil)
+            self.people = response.people
         } catch {
             self.error = error
         }

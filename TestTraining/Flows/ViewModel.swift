@@ -27,14 +27,18 @@ final class ViewModel: ObservableViewModel {
 
     @MainActor
     func refresh() async {
-        do {
-            let people: People = try await self.apiClient.perform(request: .get,
-                                                                  path: self.apiCallPath,
-                                                                  properties: nil)
-            self.state.people = people.people
-        } catch {
-            self.state.error = error
-        }
+        await apiClient.perform(request: .get,
+                                path: apiCallPath,
+                                properties: nil,
+                                completion: { (result: Result<People, Error>, cache: Bool) in
+            switch (result) {
+            case (.success(let people)):
+                print("Is from cache: \(cache)")
+                self.state.people = people.people
+            case (.failure(let error)):
+                self.state.error = error
+            }
+        })
     }
 
     func binding<Value>(_ keyPath: WritableKeyPath<State, Value>) -> Binding<Value> where Value : Equatable {

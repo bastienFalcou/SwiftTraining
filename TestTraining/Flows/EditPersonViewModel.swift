@@ -42,8 +42,6 @@ final class EditPersonViewModel: ViewModelProtocol, ObservableViewModel {
             case .formInputChange:
                 do {
                     try self.validateInput(self.person)
-                    self.state.name = self.person.name
-                    self.state.language = self.person.language ?? ""
                     self.state.error = nil
                 } catch {
                     self.state.error = error

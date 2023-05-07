@@ -4,6 +4,12 @@ import SwiftUI
 
 struct EditPersonView: View {
     @Environment(\.dismiss) var dismiss
+    
+    @State var name: String = "" {
+        didSet {
+            
+        }
+    }
 
     let person: Person
 
@@ -20,9 +26,9 @@ struct EditPersonView: View {
                             .bold()
                             .padding(.leading, 16)
                         Spacer()
-                        TextField("Name", text: viewModel.binding(\.name))
-                            .onChange(of: viewModel.state.name) { _ in
-                                viewModel.send(.formInputChange)
+                        // TODO: The following is very ugly, I didn't find the better way of doing it in a reasonable amount of time
+                        TextField("Language", text: viewModel.binding(\.name)).onChange(of: viewModel.state.name) { _ in
+                            viewModel.name = viewModel.state.name
                         }
                     }
                     HStack {
@@ -30,9 +36,9 @@ struct EditPersonView: View {
                             .bold()
                             .padding(.leading, 16)
                         Spacer()
-                        TextField("Language", text: viewModel.binding(\.language))
-                            .onChange(of: viewModel.state.language) { _ in
-                                viewModel.send(.formInputChange)
+                        // TODO: The following is very ugly, I didn't find the better way of doing it in a reasonable amount of time
+                        TextField("Language", text: viewModel.binding(\.language)).onChange(of: viewModel.state.language) { _ in
+                            viewModel.language = viewModel.state.language
                         }
                     }
                     if let error = viewModel.state.error as? EditPersonViewModel.ValidationError {

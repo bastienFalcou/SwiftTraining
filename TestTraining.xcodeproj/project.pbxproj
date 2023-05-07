@@ -232,8 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				0C54F3FA29B6359B000D16EA /* ViewModel.swift */,
-				0C99F6DB29E3254900828F00 /* EditPersonViewModel.swift */,
 				0CB336F428BA9F7E00BB4383 /* ViewModelLegacy.swift */,
+				0C99F6DB29E3254900828F00 /* EditPersonViewModel.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";

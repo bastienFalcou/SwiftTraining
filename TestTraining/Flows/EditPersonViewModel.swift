@@ -5,7 +5,6 @@ import SwiftUI
 final class EditPersonViewModel: ViewModelProtocol, ObservableViewModel {
     enum Event {
         case cancel
-        case formInputChange
         case submit(Person)
     }
 
@@ -29,6 +28,35 @@ final class EditPersonViewModel: ViewModelProtocol, ObservableViewModel {
             language: state.language
         )
     }
+    
+    var name: String {
+        get {
+            state.name
+        }
+        set {
+            state.name = newValue
+            validateInput()
+        }
+    }
+    
+    var language: String {
+        get {
+            state.language
+        }
+        set {
+            state.language = newValue
+            validateInput()
+        }
+    }
+    
+    private func validateInput() {
+        do {
+            try self.validateInput(self.person)
+            self.state.error = nil
+        } catch {
+            self.state.error = error
+        }
+    }
 
     init(person: Person) {
         state = .init(
@@ -36,20 +64,6 @@ final class EditPersonViewModel: ViewModelProtocol, ObservableViewModel {
             name: person.name,
             language: person.language ?? ""
         )
-
-        observe(EditPersonViewModel.self) { event in
-            switch event {
-            case .formInputChange:
-                do {
-                    try self.validateInput(self.person)
-                    self.state.error = nil
-                } catch {
-                    self.state.error = error
-                }
-            default:
-                break
-            }
-        }
     }
 
     // Used for testing of unit tests

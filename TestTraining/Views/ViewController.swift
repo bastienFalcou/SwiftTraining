@@ -8,8 +8,8 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let peopleList = PeopleList()
-        let controller = UIHostingController(rootView: peopleList)
+        let loginView = LoginView()
+        let controller = UIHostingController(rootView: loginView)
         inject(controller: controller)
     }
 }

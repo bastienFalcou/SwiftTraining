@@ -49,6 +49,8 @@
 		0CF0ED2328C6AAB100907919 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF0ED2228C6AAB100907919 /* UIView+Extensions.swift */; };
 		1370F2FF2A07F38700C9D428 /* CachingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370F2FE2A07F38700C9D428 /* CachingService.swift */; };
 		1370F3002A07F38700C9D428 /* CachingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370F2FE2A07F38700C9D428 /* CachingService.swift */; };
+		13FCE60A2A4A95550075CE13 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FCE6092A4A95550075CE13 /* LoginView.swift */; };
+		13FCE60C2A4A97CC0075CE13 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FCE60B2A4A97CC0075CE13 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,8 @@
 		0CF0ED1E28C6686000907919 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		0CF0ED2228C6AAB100907919 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		1370F2FE2A07F38700C9D428 /* CachingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingService.swift; sourceTree = "<group>"; };
+		13FCE6092A4A95550075CE13 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		13FCE60B2A4A97CC0075CE13 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,7 @@
 				0CF0ED1B28C6683700907919 /* PeopleRow.swift */,
 				0CF0ED1928C6681B00907919 /* PeopleListLegacy.swift */,
 				0C99F6D929E324B000828F00 /* EditPersonView.swift */,
+				13FCE6092A4A95550075CE13 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 				0C54F3FA29B6359B000D16EA /* ViewModel.swift */,
 				0CB336F428BA9F7E00BB4383 /* ViewModelLegacy.swift */,
 				0C99F6DB29E3254900828F00 /* EditPersonViewModel.swift */,
+				13FCE60B2A4A97CC0075CE13 /* LoginViewModel.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -416,7 +422,9 @@
 				0CF0ED1A28C6681B00907919 /* PeopleListLegacy.swift in Sources */,
 				0C54F3EF29B631E0000D16EA /* ViewModelProtocol.swift in Sources */,
 				0CF0ED2328C6AAB100907919 /* UIView+Extensions.swift in Sources */,
+				13FCE60C2A4A97CC0075CE13 /* LoginViewModel.swift in Sources */,
 				0C54F3F529B63355000D16EA /* WithViewModel.swift in Sources */,
+				13FCE60A2A4A95550075CE13 /* LoginView.swift in Sources */,
 				0CB336FE28BAA48A00BB4383 /* RequestType.swift in Sources */,
 				0C54F3F329B632B1000D16EA /* ViewModelObserver.swift in Sources */,
 				0C54F3FD29B63A7B000D16EA /* PeopleList.swift in Sources */,
